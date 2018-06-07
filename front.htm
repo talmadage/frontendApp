@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Shaastra 4019</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">events</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Register</a></li>
+        <li><a href="#">Sign Up</a></li>		
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+    </div> 
+    <div class="col-sm-8 text-left"> 
+      <h1>Registration form</h1>
+      
+      <hr>
+      <p>
+	  <form action="/action_page.php" name="form">
+  <br><div>
+  First name:<br>
+  <input type="text" name="firstname"  minlength=1 onKeyup="checkform()" />
+  </div><br>
+  <br><div>
+  Last name:<br>
+  <input type="text" name="lastname"   minlength=1 onKeyup="checkform()" />
+  </div><br>
+  <br><div>
+  Shaastra Id:<br>
+  <input type="number" name="ShaastraId"   minlength=1 onKeyup="checkform()" /> 
+  </div><br>
+  <br><div>
+  Phone No:<br>
+  <input type="number" name="Phonenumber"  maxlength="10" minlength=10 onKeyup="checkform()" /> 
+  </div><br>
+  <br><div>
+  Email:<br>
+  <input type="email" name="Email" onKeyup="checkform()" /> 
+  </div><br> 
+  <br><div>
+  State:<br>
+   <input type="text" id="t1" name="State" list="State" />
+    <datalist id="State">
+  <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+<option value="Andhra Pradesh">Andhra Pradesh</option>
+<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+<option value="Assam">Assam</option>
+<option value="Bihar">Bihar</option>
+<option value="Chandigarh">Chandigarh</option>
+<option value="Chhattisgarh">Chhattisgarh</option>
+<option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+<option value="Daman and Diu">Daman and Diu</option>
+<option value="Delhi">Delhi</option>
+<option value="Goa">Goa</option>
+<option value="Gujarat">Gujarat</option>
+<option value="Haryana">Haryana</option>
+<option value="Himachal Pradesh">Himachal Pradesh</option>
+<option value="Jammu and Kashmir">Jammu and Kashmir</option>
+<option value="Jharkhand">Jharkhand</option>
+<option value="Karnataka">Karnataka</option>
+<option value="Kerala">Kerala</option>
+<option value="Lakshadweep">Lakshadweep</option>
+<option value="Madhya Pradesh">Madhya Pradesh</option>
+<option value="Maharashtra">Maharashtra</option>
+<option value="Manipur">Manipur</option>
+<option value="Meghalaya">Meghalaya</option>
+<option value="Mizoram">Mizoram</option>
+<option value="Nagaland">Nagaland</option>
+<option value="Orissa">Orissa</option>
+<option value="Pondicherry">Pondicherry</option>
+<option value="Punjab">Punjab</option>
+<option value="Rajasthan">Rajasthan</option>
+<option value="Sikkim">Sikkim</option>
+<option value="Tamil Nadu">Tamil Nadu</option>
+<option value="Tripura">Tripura</option>
+<option value="Uttaranchal">Uttaranchal</option>
+<option value="Uttar Pradesh">Uttar Pradesh</option>
+<option value="West Bengal">West Bengal</option>
+</datalist>
+</div><br>
+
+<br><div>
+<label>
+Password:
+<input name="password"  id="password" type="password"  minlength=6  />
+</label></div>
+<div><label>
+Confirm Password:
+<input name="password_confirm"  id="password_confirm" type="password" onKeyup="checkform()"   />
+<span id='message'></span>
+</label>
+<script>
+    var check = function() {
+  if (document.getElementById('password').value == document.getElementById('confirm_password').value  ) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'matching';
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'not matching';
+  }
+}
+ 
+//window.onload = check;
+</script>
+</div>
+<br>
+<input type="submit" value="Submit" id="submitbutton" disabled="disabled">
+<script>
+function checkform() {
+    var f = document.forms["form"].elements;
+    var cansubmit = true;
+
+    for (var i = 0; i < f.length; i++) {
+        if (f[i].value.length == 0)
+            cansubmit = false;
+    }
+
+   // document.getElementById(submitbutton).disabled = !cansubmit;
+}
+window.onload = checkform;
+</script>
+</form>
+	 
+    </div>
+    <div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p><noscript>
+ For full functionality of this site it is necessary to enable JavaScript.
+ Here are the <a href="https://www.enable-javascript.com/" target="_blank">
+ instructions how to enable JavaScript in your web browser</a>.
+</noscript></p>
+</footer>
+
+</body>
+</html>
