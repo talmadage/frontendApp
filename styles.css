@@ -2,9 +2,7 @@ input:invalid {
   box-shadow: 0 0 5px 1px red;
   background-color: #ff8080;
 }
-input:valid {
-	background-color: =#66cc66;
-}
+
 
 form {
   max-width: 200px;
